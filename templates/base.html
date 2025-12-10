@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}B2B Vehicle Solutions{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <a href="{{ url_for('home') }}">CNJ Vehicle Solutions</a>
+      </div>
+      <nav class="main-nav">
+        <a href="#process">프로세스</a>
+        <a href="#services">서비스</a>
+        <a href="#cases">사례</a>
+        <a href="#about">About</a>
+        <a href="#callback" class="btn-nav-primary">콜백 요청</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Menu">
+        ☰
+      </button>
+    </div>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>(주)씨앤제이컴퍼니</strong><br>
+        롯데오토리스 공식 Sales Master<br>
+        경기도 남양주시 다산중앙로19번길 21 블루웨일 505~506호
+      </div>
+      <div class="footer-contact">
+        T. 010-3685-2354<br>
+        E. sujinchoo.cnj@outlook.com<br>
+        LinkedIn: <a href="#" target="_blank">프로필 바로가기</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // 모바일 네비게이션 토글
+    const navToggle = document.querySelector('.nav-toggle');
+    const mainNav = document.querySelector('.main-nav');
+    if (navToggle && mainNav) {
+      navToggle.addEventListener('click', () => {
+        mainNav.classList.toggle('open');
+      });
+    }
+  </script>
+</body>
+</html>
