@@ -22,13 +22,10 @@
   --bg-highlight: #EFF6FF;
 }
 
-/* 기본 배경 */
-body {
-  background: var(--bg-body);
-  color: var(--neutral-dark);
-}
-
+/* ============================= */
 /* 기본 공통 */
+/* ============================= */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -37,8 +34,8 @@ body {
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", sans-serif;
-  background: #0f172a;
-  color: #111827;
+  background: var(--bg-body);
+  color: var(--neutral-light);
   line-height: 1.5;
 }
 
@@ -54,14 +51,16 @@ a {
   padding: 0 16px;
 }
 
+/* ============================= */
 /* 헤더 */
+/* ============================= */
 
 .site-header {
   position: sticky;
   top: 0;
   z-index: 20;
-  background: rgba(15, 23, 42, 0.96);
-  border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+  background: var(--primary-navy);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(8px);
 }
 
@@ -75,7 +74,7 @@ a {
 .logo a {
   font-weight: 700;
   font-size: 1.1rem;
-  color: #e5e7eb;
+  color: var(--neutral-light);
 }
 
 .main-nav {
@@ -86,17 +85,17 @@ a {
 
 .main-nav a {
   font-size: 0.95rem;
-  color: #cbd5f5;
+  color: var(--neutral-light);
 }
 
 .main-nav a:hover {
-  color: #ffffff;
+  color: var(--accent-amber);
 }
 
 .btn-nav-primary {
   padding: 8px 14px;
   border-radius: 999px;
-  background: #2563eb;
+  background: var(--secondary-blue);
   color: #ffffff !important;
   font-weight: 500;
 }
@@ -105,16 +104,23 @@ a {
   display: none;
   background: none;
   border: none;
-  color: #e5e7eb;
+  color: var(--neutral-light);
   font-size: 1.4rem;
 }
 
-/* Hero */
+/* ============================= */
+/* Hero 개선 (브랜딩 100% 반영) */
+/* ============================= */
 
 .hero {
-  background: radial-gradient(circle at top left, #1d3a8a, #0f172a);
-  color: #e5e7eb;
-  padding: 56px 0 64px;
+  background: linear-gradient(
+    135deg,
+    var(--primary-navy) 0%,
+    var(--primary-navy-light) 40%,
+    var(--secondary-blue) 100%
+  );
+  color: var(--neutral-light);
+  padding: 72px 0 88px;
 }
 
 .hero-inner {
@@ -125,13 +131,15 @@ a {
 }
 
 .hero h1 {
-  font-size: 2.3rem;
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
   margin-bottom: 16px;
 }
 
 .hero p {
-  font-size: 1rem;
-  color: #cbd5f5;
+  font-size: 1.1rem;
+  color: var(--neutral-light);
   margin-bottom: 20px;
 }
 
@@ -149,47 +157,53 @@ a {
 
 .hero-tags span {
   font-size: 0.8rem;
-  padding: 4px 10px;
+  padding: 4px 12px;
   border-radius: 999px;
-  background: rgba(15, 23, 42, 0.7);
-  border: 1px solid rgba(148, 163, 184, 0.5);
+  background: var(--accent-amber);
+  color: #000;
+  font-weight: 600;
 }
+
+/* Hero 이미지 박스(5번 B타입: 실제 트럭 이미지 넣기 준비) */
 
 .hero-image-placeholder {
   border-radius: 16px;
-  border: 1px dashed rgba(148, 163, 184, 0.7);
-  min-height: 220px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  min-height: 260px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #9ca3af;
-  font-size: 0.9rem;
+  color: var(--neutral-light);
+  font-size: 1rem;
 }
 
+/* ============================= */
 /* Sections */
+/* ============================= */
 
 .section {
   padding: 56px 0;
-  background: #f3f4f6;
+  background: var(--bg-section);
 }
 
 .section-alt {
-  background: #e5e7eb;
+  background: var(--bg-section-alt);
 }
 
 .section-highlight {
-  background: #eff6ff;
+  background: var(--bg-highlight);
 }
 
 .section h2 {
   font-size: 1.6rem;
   margin-bottom: 12px;
-  color: #0f172a;
+  color: var(--primary-navy);
 }
 
 .section-subtitle {
   margin-bottom: 24px;
-  color: #4b5563;
+  color: var(--neutral-gray);
 }
 
 .grid {
@@ -203,7 +217,9 @@ a {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
+/* ============================= */
 /* Cards */
+/* ============================= */
 
 .card {
   background: #ffffff;
@@ -216,15 +232,17 @@ a {
 .card h3 {
   font-size: 1.05rem;
   margin-bottom: 8px;
-  color: #111827;
+  color: var(--neutral-dark);
 }
 
 .card p {
   font-size: 0.9rem;
-  color: #4b5563;
+  color: var(--neutral-gray);
 }
 
+/* ============================= */
 /* About */
+/* ============================= */
 
 .about-inner {
   display: grid;
@@ -235,7 +253,7 @@ a {
 
 .about-text p {
   margin-bottom: 10px;
-  color: #111827;
+  color: var(--neutral-dark);
 }
 
 .about-side .about-card {
@@ -245,7 +263,9 @@ a {
   box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
 }
 
-/* Buttons */
+/* ============================= */
+/* Buttons (브랜드 컬러 적용) */
+/* ============================= */
 
 .btn-primary,
 .btn-secondary,
@@ -261,36 +281,38 @@ a {
   cursor: pointer;
 }
 
+/* Primary CTA 버튼 */
 .btn-primary {
-  background: #2563eb;
+  background: var(--secondary-blue);
   color: #ffffff;
 }
-
 .btn-primary:hover {
-  background: #1d4ed8;
+  background: var(--secondary-blue-dark);
 }
 
+/* Secondary 버튼 */
 .btn-secondary {
-  background: rgba(15, 23, 42, 0.8);
-  color: #e5e7eb;
+  background: var(--primary-navy-light);
+  color: var(--neutral-light);
 }
-
 .btn-secondary:hover {
-  background: rgba(15, 23, 42, 1);
+  background: var(--primary-navy);
 }
 
+/* Outline 버튼 */
 .btn-outline {
   background: transparent;
-  border: 1px solid #2563eb;
-  color: #2563eb;
+  border: 1px solid var(--secondary-blue);
+  color: var(--secondary-blue);
 }
-
 .btn-outline:hover {
-  background: #2563eb;
+  background: var(--secondary-blue);
   color: #ffffff;
 }
 
+/* ============================= */
 /* 콜백 폼 */
+/* ============================= */
 
 .callback-form {
   max-width: 720px;
@@ -318,7 +340,7 @@ a {
 
 .form-field label {
   font-size: 0.85rem;
-  color: #374151;
+  color: var(--neutral-dark);
 }
 
 .form-field input,
@@ -335,15 +357,17 @@ a {
 .form-field select:focus,
 .form-field textarea:focus {
   outline: none;
-  border-color: #2563eb;
+  border-color: var(--secondary-blue);
   box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.2);
 }
 
+/* ============================= */
 /* Footer */
+/* ============================= */
 
 .site-footer {
-  background: #020617;
-  color: #9ca3af;
+  background: var(--primary-navy);
+  color: var(--neutral-light);
   padding: 20px 0;
 }
 
@@ -355,10 +379,12 @@ a {
 }
 
 .footer-inner a {
-  color: #e5e7eb;
+  color: var(--neutral-light);
 }
 
-/* 반응형 */
+/* ============================= */
+/* Responsive */
+/* ============================= */
 
 @media (max-width: 800px) {
   .hero-inner {
@@ -377,7 +403,7 @@ a {
     position: absolute;
     top: 64px;
     right: 0;
-    background: #020617;
+    background: var(--primary-navy);
     flex-direction: column;
     padding: 12px 16px;
     display: none;
@@ -392,6 +418,11 @@ a {
     display: block;
   }
 }
+
+/* ============================= */
+/* Admin Table */
+/* ============================= */
+
 .lead-table {
   width: 100%;
   border-collapse: collapse;
