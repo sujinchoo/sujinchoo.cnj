@@ -1,3 +1,33 @@
+:root {
+  /* Brand Primary Colors */
+  --primary-navy: #0F172A;
+  --primary-navy-light: #1E293B;
+
+  /* Secondary / CTA */
+  --secondary-blue: #2563EB;
+  --secondary-blue-dark: #1D4ED8;
+
+  /* Accent */
+  --accent-amber: #FBBF24;
+
+  /* Neutral */
+  --neutral-gray: #6B7280;
+  --neutral-light: #E5E7EB;
+  --neutral-dark: #111827;
+
+  /* Background */
+  --bg-body: #0F172A;
+  --bg-section: #F3F4F6;
+  --bg-section-alt: #E5E7EB;
+  --bg-highlight: #EFF6FF;
+}
+
+/* 기본 배경 */
+body {
+  background: var(--bg-body);
+  color: var(--neutral-dark);
+}
+
 /* 기본 공통 */
 * {
   box-sizing: border-box;
